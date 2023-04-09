@@ -1026,7 +1026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.92765}
+  m_AnchoredPosition: {x: 0, y: 0.00013618438}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &255483084
@@ -2790,7 +2790,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 437335532}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99412477
+  m_Size: 0.9999534
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3275,6 +3275,7 @@ MonoBehaviour:
   playerItemsList: []
   playerItemPrefab: {fileID: 4848850033883766117, guid: eb98e7356d4b4404299149d677dfe381, type: 3}
   playerItemParent: {fileID: 763417483}
+  playButton: {fileID: 1717767379}
 --- !u!1 &1717767379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,7 +3362,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1563919801}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: play
+        m_MethodName: OnClickPlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
