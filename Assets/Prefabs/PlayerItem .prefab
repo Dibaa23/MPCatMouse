@@ -196,7 +196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4848850032336650995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4848850033883766117}
+        m_TargetAssemblyTypeName: PlayerItem, Assembly-CSharp
+        m_MethodName: OnClickRightArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4848850032347196654
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +464,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4848850033110953816}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4848850033883766117}
+        m_TargetAssemblyTypeName: PlayerItem, Assembly-CSharp
+        m_MethodName: OnClickLeftArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4848850033883766119
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,9 +572,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 4848850032347196652}
-  highlightColor: {r: 0.38679248, g: 0, b: 0, a: 0.5176471}
+  backgroundImage: {fileID: 6775808578626885751}
+  highlightColor: {r: 1, g: 0, b: 0, a: 0.5176471}
   leftArrowButton: {fileID: 4848850033110953819}
   rightArrowButton: {fileID: 4848850032336650998}
+  playerAvatar: {fileID: 4848850033943986348}
+  avatars:
+  - {fileID: 21300000, guid: b41161276cac2d04393586d3c18909e7, type: 3}
+  - {fileID: 1609449544, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: 968575255, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: -960360251, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: 978549501, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: -50185164, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: 621620640, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
+  - {fileID: -1332119989, guid: 92ca69cdf5154c2408945b0b698398b2, type: 3}
 --- !u!1 &4848850033943986350
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1187839662, guid: a0dd93c3f124fe2469ab0581875dc7c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b41161276cac2d04393586d3c18909e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
