@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject cheesePrefab;
     public GameObject catPrefab;
     public GameObject coinPrefab;
+    public GameObject[] playerPrefabs;
     public GameObject[] forestPrefabs;
     public float numBots;
     public float forestObstacles;
@@ -23,7 +24,9 @@ public class Spawner : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
+        //GameObject player = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         GameObject player = PhotonNetwork.Instantiate(mousePrefab.name, transform.position, Quaternion.identity);
+        //PhotonNetwork.Instantiate(player.name, transform.position, Quaternion.identity);
         player.GetComponentInChildren<Camera>().enabled = true;
         catPrefab = GameObject.FindGameObjectWithTag("Cat"); 
         numCheese = 0f;

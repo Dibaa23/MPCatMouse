@@ -3624,7 +3624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2044008482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7001,7 +7001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3561002504794399675
 GameObject:
   m_ObjectHideFlags: 0
@@ -21330,6 +21330,15 @@ MonoBehaviour:
   cheesePrefab: {fileID: 3085996842830239023, guid: febeea2106b0e214baee4f519ff5810d, type: 3}
   catPrefab: {fileID: 3250860557865579776}
   coinPrefab: {fileID: 6052208450303652035, guid: 6d9b21c8ebbafd2428b4515f78c9912d, type: 3}
+  playerPrefabs:
+  - {fileID: 771489069433686855, guid: 22a193b081455c0418faf11926dae934, type: 3}
+  - {fileID: 771489069433686855, guid: b8e193bfb1f187b4bad9100106e89004, type: 3}
+  - {fileID: 771489069433686855, guid: 3903fc5ccf717be40bd290c45a912a33, type: 3}
+  - {fileID: 771489069433686855, guid: dabf04d5a18d65c4d87ee817e2540df5, type: 3}
+  - {fileID: 771489069433686855, guid: 2f70ef3813242bb4992ccf64bdbccdab, type: 3}
+  - {fileID: 771489069433686855, guid: dda77ed5e81cef5458b978e3115cc50b, type: 3}
+  - {fileID: 771489069433686855, guid: 3673515c1fc443a41957d89e52f5f0e5, type: 3}
+  - {fileID: 771489069433686855, guid: 3c1706cbc81a29f4eaaaef5c93a817a9, type: 3}
   forestPrefabs:
   - {fileID: 6761506487498852043, guid: a11677f30202bf7488f370fcc07dc4e1, type: 3}
   - {fileID: 6761506487498852043, guid: b5a2dba2946c5c34ea339abde7b424df, type: 3}
@@ -21436,7 +21445,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 1
   blendDistance: 0
-  weight: 0
+  weight: 1
   sharedProfile: {fileID: 11400000, guid: 1d9477017d645d348a56789a5973921f, type: 2}
 --- !u!1 &5980061613224648443
 GameObject:
