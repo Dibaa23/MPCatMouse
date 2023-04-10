@@ -24,10 +24,10 @@ public class Spawner : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
-        //GameObject player = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
-        GameObject player = PhotonNetwork.Instantiate(mousePrefab.name, transform.position, Quaternion.identity);
-        //PhotonNetwork.Instantiate(player.name, transform.position, Quaternion.identity);
+        GameObject player = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         player.GetComponentInChildren<Camera>().enabled = true;
+        //GameObject player = PhotonNetwork.Instantiate(mousePrefab.name, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(player.name, transform.position, Quaternion.identity);
         catPrefab = GameObject.FindGameObjectWithTag("Cat"); 
         numCheese = 0f;
         numCoins = 0f;
