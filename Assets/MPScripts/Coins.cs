@@ -6,19 +6,20 @@ using TMPro;
 
 public class Coins : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject manager;
     public TMP_Text cointxt;
 
     // Start is called before the first frame update
     void Start()
     {
+        manager = GameObject.Find("Spawner");
         cointxt = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Player(Clone)");
+        GameObject player = manager.GetComponent<Spawner>().currPlayer;
         cointxt.text = "×" + movement.coins.ToString("0");
         if (!player.GetComponent<health>().alive)
         {

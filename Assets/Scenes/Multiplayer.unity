@@ -295,8 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22e0d77abbf8fd43a476d4b6b1e479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 517993112}
-  player: {fileID: 0}
+  manager: {fileID: 5980061612943198363}
   options: {fileID: 297698895}
 --- !u!4 &167987786
 Transform:
@@ -744,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bot: {fileID: 47082965826713792, guid: d167ab3f08d28a54a87d69fe12f2ab53, type: 3}
   player: {fileID: 0}
+  manager: {fileID: 5980061612943198363}
   cat: {fileID: 3250860557865579776}
   countdownTime: 5
   countdownDisplay: {fileID: 322233671}
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   radarLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  Player: {fileID: 0}
+  manager: {fileID: 5980061612943198363}
 --- !u!1 &835808042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e56a8225069ff4497413ac2e0b77d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  manager: {fileID: 0}
   keytxt: {fileID: 879381400}
 --- !u!114 &879381400
 MonoBehaviour:
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7b6de2e089f3c4c8d06fe29106fbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  manager: {fileID: 0}
   cointxt: {fileID: 914388506}
 --- !u!1 &967987556
 GameObject:
@@ -21325,6 +21325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff711c09bcfc49468f76d45e76dbf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currPlayer: {fileID: 0}
   mousePrefab: {fileID: 771489069433686855, guid: 22a193b081455c0418faf11926dae934, type: 3}
   botPrefab: {fileID: 47082965826713792, guid: d167ab3f08d28a54a87d69fe12f2ab53, type: 3}
   cheesePrefab: {fileID: 3085996842830239023, guid: febeea2106b0e214baee4f519ff5810d, type: 3}

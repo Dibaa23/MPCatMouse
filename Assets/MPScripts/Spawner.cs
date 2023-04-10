@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class Spawner : MonoBehaviourPunCallbacks
 {
+    public GameObject currPlayer;
     public GameObject mousePrefab;
     public GameObject botPrefab;
     public GameObject cheesePrefab;
@@ -24,10 +25,10 @@ public class Spawner : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
-        GameObject player = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
-        player.GetComponentInChildren<Camera>().enabled = true;
+        currPlayer = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
+        currPlayer.GetComponentInChildren<Camera>().enabled = true;
         //GameObject player = PhotonNetwork.Instantiate(mousePrefab.name, transform.position, Quaternion.identity);
-        PhotonNetwork.Instantiate(player.name, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(currPlayer.name, transform.position, Quaternion.identity);
         catPrefab = GameObject.FindGameObjectWithTag("Cat"); 
         numCheese = 0f;
         numCoins = 0f;

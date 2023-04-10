@@ -133,12 +133,12 @@ MonoBehaviour:
   Manager: {fileID: 0}
   cam: {fileID: 3371118435616900132}
   Fireworks: {fileID: 251023740300766832, guid: 06d04a5989364924ea3c3e54684a0806, type: 3}
-  keys: 0
   rb2D: {fileID: 771489069433686854}
   dust: {fileID: 771489071065940457}
   staminaBarimg: {fileID: 0}
   NormalSpeed: 200
   stamina: 10
+  countdownDisplay: {fileID: 0}
   ready: 0
 --- !u!114 &771489069995070721
 MonoBehaviour:
@@ -5965,7 +5965,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3371118435616900135}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.2924528, g: 0.14498289, b: 0, a: 0}

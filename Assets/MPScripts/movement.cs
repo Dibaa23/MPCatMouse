@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Photon.Pun;
 
 public class movement : MonoBehaviourPunCallbacks
@@ -10,20 +11,23 @@ public class movement : MonoBehaviourPunCallbacks
     public Camera cam;
     public GameObject Fireworks;
     public static float coins = 0;
-    public float keys = 0;
+    public static float keys = 0;
     public Rigidbody2D rb2D;
     public ParticleSystem dust;
     public Image staminaBarimg;
     private float speed;
     public float NormalSpeed = 15f;
     public float stamina = 10f;
+    public TMP_Text countdownDisplay;
     public bool ready;
     PhotonView view;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false; 
+        countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
+        //Cursor.visible = false; 
+        ready = false;
         Manager = GameObject.Find("Spawner");
         speed = NormalSpeed;
         view = GetComponent<PhotonView>();
@@ -34,7 +38,8 @@ public class movement : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<health>().alive && ready && view.IsMine) {
+        if (gameObject.GetComponent<health>().alive && countdownDisplay.text == "GO!" && view.IsMine) {
+            ready = true;
             staminaBarimg = GameObject.Find("Canvas").transform.GetChild(7).gameObject.GetComponent<Image>();
             rotation();
             thrust();
