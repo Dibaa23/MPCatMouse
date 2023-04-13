@@ -6,6 +6,7 @@ using Photon.Pun;
 public class CatBot : MonoBehaviour
 {
     public GameObject Manager;
+    public GameObject[] micePrefabs;
     public Rigidbody2D rb2D;
     private float speed;
     private Vector3 offset = new Vector3(0, 1.2f, 0);
@@ -41,12 +42,13 @@ public class CatBot : MonoBehaviour
         InvokeRepeating("RotateSmall", 1f, rotateRate1);
         InvokeRepeating("RotateBig", 1f, rotateRate2);
 
-        Invoke("FindPlayer", 1f);
+        Invoke("FindPlayer", 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        micePrefabs = GameObject.FindGameObjectsWithTag("Mouse");
         if (gameReady)
         {
             thrust2();
@@ -68,7 +70,7 @@ public class CatBot : MonoBehaviour
 
     public void FindPlayer()
     {
-        mice.Add(Manager.GetComponent<Spawner>().currPlayer);
+        mice.AddRange(micePrefabs);
     }
 
     public IEnumerator CMice()
