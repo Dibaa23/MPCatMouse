@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using Photon.Pun;
 
 public class MiceAI : MonoBehaviour
 {
     public GameObject Manager;
     public GameObject Center;
-    public GameObject Cat;
+    public List<GameObject> Cat;
     public GameObject Cheese;
     public GameObject boom;
     public Rigidbody2D rb2D;
@@ -29,7 +29,6 @@ public class MiceAI : MonoBehaviour
     void Start()
     {
         Manager = GameObject.Find("Spawner");
-        Cat = GameObject.FindGameObjectWithTag("Cat");
         Cheese = GameObject.Find("Cheese(Clone)");
         Center = GameObject.Find("Center");
         countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
@@ -63,7 +62,10 @@ public class MiceAI : MonoBehaviour
         
         if (HP <= 0f)
         {
-            Cat.GetComponent<CatBot>().mice.Remove(gameObject);
+            foreach (GameObject cat in Cat)
+            {
+                cat.GetComponent<CatBot>().mice.Remove(gameObject);
+            }
             GameObject clone2 = Instantiate(boom, transform.position, Quaternion.identity);
             clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
             Destroy(clone2.gameObject, 0.5f);
@@ -151,17 +153,18 @@ public class MiceAI : MonoBehaviour
 
     public void Flee()
     {
-        if (Vector2.Distance(Cat.transform.position, transform.position) <= (Random.Range(5f, 10f)) && !runTo)
+        bool x = false;
+        foreach (GameObject cat in Cat)
         {
-            runAway = true;
-            transform.Rotate(0f, 0f, Random.Range(0f, 1f));
-            transform.position = Vector2.MoveTowards(transform.position, Cat.transform.position, Time.deltaTime * ((Random.Range(-1f, -0.50f)) * speed));
+            if (Vector2.Distance(cat.transform.position, transform.position) <= (Random.Range(5f, 10f)) && !runTo)
+            {
+                x = true;
+                transform.Rotate(0f, 0f, Random.Range(0f, 1f));
+                transform.position = Vector2.MoveTowards(transform.position, cat.transform.position, Time.deltaTime * ((Random.Range(-1f, -0.50f)) * speed));
+            }
         }
 
-        else
-        {
-            runAway = false;
-        }
+        runAway = x;
     }
 
     public void Feed() {

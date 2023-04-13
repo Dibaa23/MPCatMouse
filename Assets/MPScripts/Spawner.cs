@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject coinPrefab;
     public GameObject[] playerPrefabs;
     public GameObject[] forestPrefabs;
+    public List<GameObject> catPrefabs;
     public float numBots;
     public float forestObstacles;
     public float numCheese;
@@ -45,7 +46,13 @@ public class Spawner : MonoBehaviourPunCallbacks
     void spawnBots() {
         for (int i = 0; i < numBots; i++)
         {
-            catPrefab.GetComponent<CatBot>().mice.Add(PhotonNetwork.Instantiate(botPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity));
+            GameObject botClone = PhotonNetwork.Instantiate(botPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            foreach (GameObject catPrefab in catPrefabs)
+            {
+                catPrefab.GetComponent<CatBot>().mice.Add(botClone);
+                botClone.GetComponent<MiceAI>().Cat.Add(catPrefab);
+            }
+            //catPrefab.GetComponent<CatBot>().mice.Add(PhotonNetwork.Instantiate(botPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity));
         }
     }
 

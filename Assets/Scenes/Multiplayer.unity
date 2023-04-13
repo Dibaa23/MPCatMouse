@@ -21806,6 +21806,8 @@ MonoBehaviour:
   - {fileID: 6761506487498852043, guid: b71bc6b811245d647b8246770f34ded0, type: 3}
   - {fileID: 6761506487498852043, guid: 416bd00e8d8b92f489792674ec1877a8, type: 3}
   - {fileID: 6761506487498852043, guid: 02b84c3fe93baef4bb2ba5661bf06654, type: 3}
+  catPrefabs:
+  - {fileID: 3250860557865579776}
   numBots: 20
   forestObstacles: 20
   numCheese: 0
