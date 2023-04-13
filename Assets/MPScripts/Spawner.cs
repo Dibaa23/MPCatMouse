@@ -14,22 +14,28 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject[] forestPrefabs;
     public List<GameObject> catPrefabs;
     public float numBots;
+    public float numCats;
     public float forestObstacles;
     public float numCheese;
-    public float maxCheese = 5f;
+    public float maxCheese;
     public float numCoins;
-    public float maxCoins = 10f;
+    public float maxCoins;
     PhotonView view;
 
     // Start is called before the first frame update
     void Start()
     {
         view = GetComponent<PhotonView>();
+
         currPlayer = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         currPlayer.GetComponentInChildren<Camera>().enabled = true;
         PhotonNetwork.Instantiate(currPlayer.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+        
         numCheese = 0f;
         numCoins = 0f;
+
+
+        //spawnCats();
         spawnBots();
         spawnForestObstacles();
     }
@@ -39,6 +45,15 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         spawnCheese();
         spawnCoins();
+    }
+
+    void spawnCats() {
+
+        for (int i = 0; i < numCats; i++)
+        {
+            GameObject catClone = PhotonNetwork.Instantiate(catPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            catPrefabs.Add(catClone);
+        }
     }
 
 
@@ -51,7 +66,6 @@ public class Spawner : MonoBehaviourPunCallbacks
                 catPrefab.GetComponent<CatBot>().mice.Add(botClone);
                 botClone.GetComponent<MiceAI>().Cat.Add(catPrefab);
             }
-            //catPrefab.GetComponent<CatBot>().mice.Add(PhotonNetwork.Instantiate(botPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity));
         }
     }
 

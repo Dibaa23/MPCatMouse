@@ -21886,6 +21886,7 @@ MonoBehaviour:
   catPrefabs:
   - {fileID: 3250860557865579776}
   numBots: 20
+  numCats: 1
   forestObstacles: 20
   numCheese: 0
   maxCheese: 5
