@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5153843981077348783}
   - component: {fileID: 1680370610884445205}
-  - component: {fileID: -5688594591474960645}
+  - component: {fileID: 5805751999801486574}
+  - component: {fileID: 5300946544390957890}
+  - component: {fileID: -8938316187397908766}
   m_Layer: 2
-  m_Name: Bush 8
+  m_Name: Bush 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 783481851, guid: 0b66dc58eaf4a79478e369208b4cc78d, type: 3}
+  m_Sprite: {fileID: -824974502, guid: 0b66dc58eaf4a79478e369208b4cc78d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5688594591474960645
+--- !u!114 &5805751999801486574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,24 +107,78 @@ MonoBehaviour:
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.33904266, y: -0.37936184, z: 0}
-  - {x: -0.4292953, y: -0.25790676, z: 0}
-  - {x: -0.46225464, y: -0.09723002, z: 0}
-  - {x: -0.47873437, y: 0.01812762, z: 0}
-  - {x: -0.45028055, y: 0.1527664, z: 0}
-  - {x: -0.37370288, y: 0.2763639, z: 0}
-  - {x: -0.26861858, y: 0.3518409, z: 0}
-  - {x: -0.13678122, y: 0.43011934, z: 0}
-  - {x: -0.0049439073, y: 0.43011934, z: 0}
-  - {x: 0.16397268, y: 0.40127987, z: 0}
-  - {x: 0.27933037, y: 0.34360105, z: 0}
-  - {x: 0.40704778, y: 0.24060315, z: 0}
-  - {x: 0.45648676, y: 0.100525975, z: 0}
-  - {x: 0.45648676, y: -0.080750376, z: 0}
-  - {x: 0.3905681, y: -0.28262627, z: 0}
-  - {x: 0.24428463, y: -0.4040813, z: 0}
-  - {x: 0.04861504, y: -0.4391831, z: 0}
-  - {x: -0.15326095, y: -0.42682335, z: 0}
-  m_ShapePathHash: 330959749
+  - {x: -0.40274775, y: -0.49618232, z: 0}
+  - {x: -0.44943058, y: -0.28435305, z: 0}
+  - {x: -0.3921783, y: 0.020992577, z: 0}
+  - {x: -0.2872157, y: 0.2118336, z: 0}
+  - {x: -0.2538185, y: 0.3406512, z: 0}
+  - {x: -0.15839803, y: 0.4456138, z: 0}
+  - {x: -0.101145744, y: 0.5648895, z: 0}
+  - {x: -0.011523664, y: 0.59637386, z: 0}
+  - {x: 0.06877589, y: 0.58206075, z: 0}
+  - {x: 0.1755737, y: 0.47424, z: 0}
+  - {x: 0.3139335, y: 0.1641233, z: 0}
+  - {x: 0.414125, y: -0.050572813, z: 0}
+  - {x: 0.423667, y: -0.34160534, z: 0}
+  - {x: 0.35687268, y: -0.4561099, z: 0}
+  - {x: 0.18805158, y: -0.5916028, z: 0}
+  - {x: -0.3110708, y: -0.6087827, z: 0}
+  m_ShapePathHash: 615345826
   m_Mesh: {fileID: 0}
-  m_InstanceId: 59006
+  m_InstanceId: 58682
+--- !u!114 &5300946544390957890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761506487498852043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -8938316187397908766}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-8938316187397908766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761506487498852043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0

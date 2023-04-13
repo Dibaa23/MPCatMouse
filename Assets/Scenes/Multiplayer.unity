@@ -21779,13 +21779,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currPlayer: {fileID: 0}
-  mousePrefab: {fileID: 771489069433686855, guid: 22a193b081455c0418faf11926dae934, type: 3}
   botPrefab: {fileID: 47082965826713792, guid: d167ab3f08d28a54a87d69fe12f2ab53, type: 3}
   cheesePrefab: {fileID: 3085996842830239023, guid: febeea2106b0e214baee4f519ff5810d, type: 3}
   catPrefab: {fileID: 3250860557865579776}
   coinPrefab: {fileID: 6052208450303652035, guid: 6d9b21c8ebbafd2428b4515f78c9912d, type: 3}
   playerPrefabs:
-  - {fileID: 771489069433686855, guid: 22a193b081455c0418faf11926dae934, type: 3}
   - {fileID: 771489069433686855, guid: b8e193bfb1f187b4bad9100106e89004, type: 3}
   - {fileID: 771489069433686855, guid: 3903fc5ccf717be40bd290c45a912a33, type: 3}
   - {fileID: 771489069433686855, guid: dabf04d5a18d65c4d87ee817e2540df5, type: 3}
@@ -23397,6 +23395,10 @@ PrefabInstance:
       propertyPath: Manager
       value: 
       objectReference: {fileID: 5980061612943198363}
+    - target: {fileID: 7275074906989045398, guid: 341fb455e03183f41a553c93b626ee23, type: 3}
+      propertyPath: mice.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7275074906989045398, guid: 341fb455e03183f41a553c93b626ee23, type: 3}
       propertyPath: mice.Array.data[0]
       value: 

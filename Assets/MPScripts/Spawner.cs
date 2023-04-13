@@ -6,7 +6,6 @@ using Photon.Pun;
 public class Spawner : MonoBehaviourPunCallbacks
 {
     public GameObject currPlayer;
-    public GameObject mousePrefab;
     public GameObject botPrefab;
     public GameObject cheesePrefab;
     public GameObject catPrefab;
@@ -27,7 +26,6 @@ public class Spawner : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
         currPlayer = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         currPlayer.GetComponentInChildren<Camera>().enabled = true;
-        //GameObject player = PhotonNetwork.Instantiate(mousePrefab.name, transform.position, Quaternion.identity);
         PhotonNetwork.Instantiate(currPlayer.name, transform.position, Quaternion.identity);
         catPrefab = GameObject.FindGameObjectWithTag("Cat"); 
         numCheese = 0f;
@@ -47,13 +45,13 @@ public class Spawner : MonoBehaviourPunCallbacks
     void spawnBots() {
         for (int i = 0; i < numBots; i++)
         {
-            catPrefab.GetComponent<CatBot>().mice.Add(Instantiate(botPrefab, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity));
+            catPrefab.GetComponent<CatBot>().mice.Add(PhotonNetwork.Instantiate(botPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity));
         }
     }
 
     void spawnCheese() {
         if ((numCheese < maxCheese) && (numCheese >= 0)) {
-            Instantiate(cheesePrefab, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            PhotonNetwork.Instantiate(cheesePrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
             numCheese++;
         }
     }
@@ -62,7 +60,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         if ((numCoins < maxCoins) && (numCoins >= 0))
         {
-            Instantiate(coinPrefab, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            PhotonNetwork.Instantiate(coinPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
             numCoins++;
         }
     }
@@ -71,7 +69,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         for (int i = 0; i < forestObstacles; i++)
         {
-            Instantiate(forestPrefabs[Random.Range(0, 13)], new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            PhotonNetwork.Instantiate(forestPrefabs[Random.Range(0, 13)].name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
     }
 }

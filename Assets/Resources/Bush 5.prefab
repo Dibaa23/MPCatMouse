@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5153843981077348783}
   - component: {fileID: 1680370610884445205}
-  - component: {fileID: 5805751999801486574}
+  - component: {fileID: 5635494461861220258}
+  - component: {fileID: 4085840125029995570}
+  - component: {fileID: 535336817677082174}
   m_Layer: 2
-  m_Name: Bush 6
+  m_Name: Bush 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -824974502, guid: 0b66dc58eaf4a79478e369208b4cc78d, type: 3}
+  m_Sprite: {fileID: 1236762335, guid: 0b66dc58eaf4a79478e369208b4cc78d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5805751999801486574
+--- !u!114 &5635494461861220258
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,28 +101,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_ComponentVersion: 1
-  m_HasRenderer: 1
+  m_HasRenderer: 0
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.40274775, y: -0.49618232, z: 0}
-  - {x: -0.44943058, y: -0.28435305, z: 0}
-  - {x: -0.3921783, y: 0.020992577, z: 0}
-  - {x: -0.2872157, y: 0.2118336, z: 0}
-  - {x: -0.2538185, y: 0.3406512, z: 0}
-  - {x: -0.15839803, y: 0.4456138, z: 0}
-  - {x: -0.101145744, y: 0.5648895, z: 0}
-  - {x: -0.011523664, y: 0.59637386, z: 0}
-  - {x: 0.06877589, y: 0.58206075, z: 0}
-  - {x: 0.1755737, y: 0.47424, z: 0}
-  - {x: 0.3139335, y: 0.1641233, z: 0}
-  - {x: 0.414125, y: -0.050572813, z: 0}
-  - {x: 0.423667, y: -0.34160534, z: 0}
-  - {x: 0.35687268, y: -0.4561099, z: 0}
-  - {x: 0.18805158, y: -0.5916028, z: 0}
-  - {x: -0.3110708, y: -0.6087827, z: 0}
-  m_ShapePathHash: 615345826
+  - {x: -0.78999996, y: -0.425, z: 0}
+  - {x: -0.78999996, y: 0.425, z: 0}
+  - {x: 0.79, y: 0.425, z: 0}
+  - {x: 0.79, y: -0.425, z: 0}
+  m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58682
+  m_InstanceId: -41098
+--- !u!114 &4085840125029995570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761506487498852043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 535336817677082174}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &535336817677082174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761506487498852043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
