@@ -94,7 +94,6 @@ public class movement : MonoBehaviourPunCallbacks
         if (col.gameObject.tag == "Coin")
         {
             coins++;
-            Manager.GetComponent<Spawner>().numCoins--;
             Destroy(col.gameObject);
         }
 

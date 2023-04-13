@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 
-public class MiceAI : MonoBehaviour
+public class MiceAI : MonoBehaviourPunCallbacks
 {
     public GameObject Manager;
     public GameObject Center;
+    public GameObject cheesePrefab;
+    public GameObject coinPrefab;
     public List<GameObject> Cat;
     public GameObject Cheese;
     public GameObject boom;
@@ -115,13 +117,13 @@ public class MiceAI : MonoBehaviour
 
         if (col.gameObject.tag == "Cheese")
         {
-            Manager.GetComponent<Spawner>().numCheese--;
             speed *= 1.5f;
             StartCoroutine(speedDown(2f));
             GameObject clone2 = Instantiate(boom, col.gameObject.transform.position, Quaternion.identity);
             clone2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0f);
             Destroy(clone2.gameObject, 0.5f);
             Destroy(col.gameObject);
+            PhotonNetwork.Instantiate(cheesePrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
 
         if (col.gameObject.tag == "Border")
@@ -133,8 +135,8 @@ public class MiceAI : MonoBehaviour
 
         if (col.gameObject.tag == "Coin")
         {
-            Manager.GetComponent<Spawner>().numCoins--;
             Destroy(col.gameObject);
+            PhotonNetwork.Instantiate(coinPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
 
         if (col.gameObject.tag == "Key" || col.gameObject.tag == "Obstacle")

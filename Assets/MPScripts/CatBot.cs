@@ -194,13 +194,11 @@ public class CatBot : MonoBehaviour
 
         if (col.gameObject.tag == "Coin")
         {
-            Manager.GetComponent<Spawner>().numCoins--;
             Destroy(col.gameObject);
         }
 
         if (col.gameObject.tag == "Cheese")
         {
-            Manager.GetComponent<Spawner>().numCheese--;
             GameObject clone2 = Instantiate(boom, col.gameObject.transform.position, Quaternion.identity);
             clone2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0f);
             Destroy(clone2.gameObject, 0.5f);

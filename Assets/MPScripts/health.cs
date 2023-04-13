@@ -25,7 +25,7 @@ public class health : MonoBehaviourPunCallbacks
         healthBarimg = GameObject.Find("Canvas").transform.GetChild(5).gameObject.GetComponent<Image>();
         alive = true;
         End.SetActive(false);
-        HP = 1f;
+        HP = 1000f;
         isHurt = false;
         view = GetComponent<PhotonView>();
         if (!view.IsMine) {
@@ -105,7 +105,6 @@ public class health : MonoBehaviourPunCallbacks
             {
                 gameObject.GetComponent<movement>().stamina += 2f;
             }
-            Manager.GetComponent<Spawner>().numCheese--;
             GameObject clone2 = Instantiate(boom, col.gameObject.transform.position, Quaternion.identity);
             clone2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0f);
             Destroy(clone2.gameObject, 0.5f);

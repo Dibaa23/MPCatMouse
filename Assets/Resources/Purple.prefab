@@ -37,12 +37,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.3333334}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1369294374910137468}
   - {fileID: 3371118435616900315}
   - {fileID: 771489071065940456}
   - {fileID: 2959236352324725026}
   - {fileID: 2959236353886178766}
   - {fileID: 2959236352637652239}
-  - {fileID: 1369294374910137468}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 0}
+  coinPrefab: {fileID: 6052208450303652035, guid: 6d9b21c8ebbafd2428b4515f78c9912d, type: 3}
   cam: {fileID: 3371118435616900132}
   Fireworks: {fileID: 251023740300766832, guid: 06d04a5989364924ea3c3e54684a0806, type: 3}
   rb2D: {fileID: 771489069433686854}
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 3371118435616900132}
   Manager: {fileID: 0}
+  cheesePrefab: {fileID: 3085996842830239023, guid: febeea2106b0e214baee4f519ff5810d, type: 3}
   boom: {fileID: 2177500804469530452, guid: de854d7a8b162d941953bff5c29936c4, type: 3}
   End: {fileID: 0}
   healthBarimg: {fileID: 0}
@@ -248,7 +250,7 @@ MonoBehaviour:
   - {x: -0.26300225, y: -0.40060633, z: 0}
   m_ShapePathHash: 644986991
   m_Mesh: {fileID: 0}
-  m_InstanceId: 56524
+  m_InstanceId: 92054
 --- !u!60 &4612293901489550092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -406,7 +408,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 92.57501, y: 93.253, z: -85.724}
 --- !u!198 &771489071065940457
 ParticleSystem:
@@ -5217,7 +5219,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2959236352324725029
 MonoBehaviour:
@@ -5781,7 +5783,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2959236352637652238
 SpriteRenderer:
@@ -5865,7 +5867,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2959236353886178753
 SpriteRenderer:
@@ -5957,7 +5959,7 @@ Transform:
   m_Children:
   - {fileID: 3371118436739109341}
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3371118435616900132
 Camera:
@@ -6466,7 +6468,7 @@ RectTransform:
   m_Children:
   - {fileID: 4268862585503661519}
   m_Father: {fileID: 771489069433686859}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

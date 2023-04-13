@@ -17,9 +17,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public float numCats;
     public float forestObstacles;
     public float numCheese;
-    public float maxCheese;
     public float numCoins;
-    public float maxCoins;
     PhotonView view;
 
     // Start is called before the first frame update
@@ -30,21 +28,18 @@ public class Spawner : MonoBehaviourPunCallbacks
         currPlayer = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         currPlayer.GetComponentInChildren<Camera>().enabled = true;
         PhotonNetwork.Instantiate(currPlayer.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
-        
-        numCheese = 0f;
-        numCoins = 0f;
-
 
         spawnCats();
         spawnBots();
         spawnForestObstacles();
+        spawnCoins();
+        spawnCheese();
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnCheese();
-        spawnCoins();
+        
     }
 
     void spawnCats() {
@@ -69,19 +64,19 @@ public class Spawner : MonoBehaviourPunCallbacks
         }
     }
 
-    void spawnCheese() {
-        if ((numCheese < maxCheese) && (numCheese >= 0)) {
+    public void spawnCheese()
+    {
+        for (int i = 0; i < numCheese; i++)
+        {
             PhotonNetwork.Instantiate(cheesePrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
-            numCheese++;
         }
     }
 
-    void spawnCoins()
+    public void spawnCoins()
     {
-        if ((numCoins < maxCoins) && (numCoins >= 0))
+        for (int i = 0; i < numCoins; i++)
         {
             PhotonNetwork.Instantiate(coinPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
-            numCoins++;
         }
     }
 
