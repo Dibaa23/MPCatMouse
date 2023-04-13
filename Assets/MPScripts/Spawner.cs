@@ -27,8 +27,7 @@ public class Spawner : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
         currPlayer = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
         currPlayer.GetComponentInChildren<Camera>().enabled = true;
-        PhotonNetwork.Instantiate(currPlayer.name, transform.position, Quaternion.identity);
-        catPrefab = GameObject.FindGameObjectWithTag("Cat"); 
+        PhotonNetwork.Instantiate(currPlayer.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         numCheese = 0f;
         numCoins = 0f;
         spawnBots();

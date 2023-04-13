@@ -28,7 +28,6 @@ public class CatBot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Manager = GameObject.Find("Spawner");
         boundrybreach = false;
         stuck = false;
 
@@ -41,6 +40,8 @@ public class CatBot : MonoBehaviour
         InvokeRepeating("FindMice", 1f, 3f);
         InvokeRepeating("RotateSmall", 1f, rotateRate1);
         InvokeRepeating("RotateBig", 1f, rotateRate2);
+
+        Invoke("FindPlayer", 1f);
     }
 
     // Update is called once per frame
@@ -64,6 +65,12 @@ public class CatBot : MonoBehaviour
     public void avoidObstacle()
     {
     }
+
+    public void FindPlayer()
+    {
+        mice.Add(Manager.GetComponent<Spawner>().currPlayer);
+    }
+
     public IEnumerator CMice()
     {
         miceFound = false;
