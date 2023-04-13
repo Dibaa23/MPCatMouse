@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Photon.Pun;
 
 public class CatBot : MonoBehaviour
@@ -11,6 +12,7 @@ public class CatBot : MonoBehaviour
     private float speed;
     private Vector3 offset = new Vector3(0, 1.2f, 0);
     public List<GameObject> mice = new List<GameObject>();
+    public TMP_Text countdownDisplay;
     private float rotateRate1;
     private float rotateRate2;
     public GameObject closestMice;
@@ -39,6 +41,7 @@ public class CatBot : MonoBehaviour
 
         Center = GameObject.Find("Center");
         Manager = GameObject.Find("Spawner");
+        countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
 
         InvokeRepeating("FindMice", 1f, 3f);
         InvokeRepeating("RotateSmall", 1f, rotateRate1);
@@ -51,9 +54,11 @@ public class CatBot : MonoBehaviour
     void Update()
     {
         micePlayers = GameObject.FindGameObjectsWithTag("Mouse");
-        if (gameReady)
+        if (countdownDisplay.text == "GO!")
         {
+            gameReady = true;
             thrust2();
+
             if (closestMice == null)
             {
                 FindMice();

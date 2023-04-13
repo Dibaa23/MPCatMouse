@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviourPunCallbacks
         numCoins = 0f;
 
 
-        //spawnCats();
+        spawnCats();
         spawnBots();
         spawnForestObstacles();
     }
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviourPunCallbacks
 
         for (int i = 0; i < numCats; i++)
         {
-            GameObject catClone = PhotonNetwork.Instantiate(catPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
+            GameObject catClone = PhotonNetwork.Instantiate(catPrefab.name, new Vector2(Random.Range(-45f, 45f), Random.Range(-30f, 30f)), Quaternion.identity);
             catPrefabs.Add(catClone);
         }
     }

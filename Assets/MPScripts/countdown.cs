@@ -6,7 +6,6 @@ using TMPro;
 
 public class countdown : MonoBehaviour
 {
-    public GameObject cat;
     public float countdownTime;
     public TMP_Text countdownDisplay;
 
@@ -19,7 +18,6 @@ public class countdown : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cat.GetComponent<CatBot>().gameReady = false;
         StartCoroutine(CountdownStart());
     }
 
@@ -35,7 +33,6 @@ public class countdown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
-        cat.GetComponent<CatBot>().gameReady = true;
         countdownDisplay.text = "GO!";
         yield return new WaitForSeconds(1f);
         countdownDisplay.gameObject.SetActive(false);

@@ -1044,7 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21d3a29c35b7084999f6f471cf2d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cat: {fileID: 3250860557865579776}
   countdownTime: 5
   countdownDisplay: {fileID: 322233671}
 --- !u!1 &557020424
@@ -7210,11 +7209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662973162279683057, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.1
+      value: -26.8
       objectReference: {fileID: 0}
     - target: {fileID: 662973162279683057, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 662973162279683057, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7254,7 +7253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662973162279683069, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2090273853509573985, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
       propertyPath: Center
@@ -7266,11 +7265,6 @@ PrefabInstance:
       objectReference: {fileID: 5980061612943198363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
---- !u!1 &3250860557865579776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 662973162279683069, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
-  m_PrefabInstance: {fileID: 2607085968119543549}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3443881885695208321
 GameObject:
   m_ObjectHideFlags: 0
@@ -21883,10 +21877,9 @@ MonoBehaviour:
   - {fileID: 6761506487498852043, guid: b71bc6b811245d647b8246770f34ded0, type: 3}
   - {fileID: 6761506487498852043, guid: 416bd00e8d8b92f489792674ec1877a8, type: 3}
   - {fileID: 6761506487498852043, guid: 02b84c3fe93baef4bb2ba5661bf06654, type: 3}
-  catPrefabs:
-  - {fileID: 3250860557865579776}
+  catPrefabs: []
   numBots: 20
-  numCats: 1
+  numCats: 3
   forestObstacles: 20
   numCheese: 0
   maxCheese: 5
