@@ -7,7 +7,7 @@ namespace DigitalRuby.RainMaker
     {
         private static readonly Color32 explosionColor = new Color32(255, 255, 255, 255);
 
-        private float cameraMultiplier = 1.0f;
+        private float cameraMultiplier = 5.0f;
         private Bounds visibleBounds = new Bounds();
         private float yOffset;
         private float visibleWorldWidth;
@@ -21,10 +21,10 @@ namespace DigitalRuby.RainMaker
         private readonly ParticleSystem.Particle[] particles = new ParticleSystem.Particle[2048];
 
         [Tooltip("The starting y offset for rain and mist. This will be offset as a percentage of visible height from the top of the visible world.")]
-        public float RainHeightMultiplier = 0.15f;
+        public float RainHeightMultiplier = 0.50f;
 
         [Tooltip("The total width of the rain and mist as a percentage of visible width")]
-        public float RainWidthMultiplier = 1.5f;
+        public float RainWidthMultiplier = 10f;
 
         [Tooltip("Collision mask for the rain particles")]
         public LayerMask CollisionMask = -1;
@@ -65,11 +65,11 @@ namespace DigitalRuby.RainMaker
             }
             if (FollowCamera)
             {
-                p.transform.position = new Vector3(Camera.transform.position.x, visibleBounds.max.y + yOffset, p.transform.position.z);
+                p.transform.position = new Vector2(Camera.transform.position.x, visibleBounds.max.y + yOffset);
             }
             else
             {
-                p.transform.position = new Vector3(p.transform.position.x, visibleBounds.max.y + yOffset, p.transform.position.z);
+                p.transform.position = new Vector2(p.transform.position.x, visibleBounds.max.y + yOffset);
             }
             p.transform.localScale = new Vector3(visibleWorldWidth * RainWidthMultiplier, 1.0f, 1.0f);
             var m = p.main;
