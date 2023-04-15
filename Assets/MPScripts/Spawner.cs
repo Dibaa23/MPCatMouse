@@ -33,8 +33,8 @@ public class Spawner : MonoBehaviourPunCallbacks
             spawnCats();
             spawnBots();
             spawnForestObstacles();
-            spawnCoins();
-            spawnCheese();
+            InvokeRepeating("spawnCheese", 1f, 10f);
+            InvokeRepeating("spawnCoins", 1f, 20f);
         }
         
     }

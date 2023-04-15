@@ -123,7 +123,6 @@ public class MiceAI : MonoBehaviourPunCallbacks
             clone2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0f);
             Destroy(clone2.gameObject, 0.5f);
             Destroy(col.gameObject);
-            PhotonNetwork.Instantiate(cheesePrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
 
         if (col.gameObject.tag == "Border")
@@ -136,7 +135,6 @@ public class MiceAI : MonoBehaviourPunCallbacks
         if (col.gameObject.tag == "Coin")
         {
             Destroy(col.gameObject);
-            PhotonNetwork.Instantiate(coinPrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
 
         if (col.gameObject.tag == "Key" || col.gameObject.tag == "Obstacle")
