@@ -11,6 +11,7 @@ public class health : MonoBehaviourPunCallbacks
     public GameObject Manager;
     public GameObject boom;
     public GameObject End;
+    public GameObject cheesePrefab;
     public Image healthBarimg;
     public bool isHurt;
     public bool alive;
@@ -25,7 +26,7 @@ public class health : MonoBehaviourPunCallbacks
         healthBarimg = GameObject.Find("Canvas").transform.GetChild(5).gameObject.GetComponent<Image>();
         alive = true;
         End.SetActive(false);
-        HP = 1000f;
+        HP = 1f;
         isHurt = false;
         view = GetComponent<PhotonView>();
         if (!view.IsMine) {
@@ -109,6 +110,7 @@ public class health : MonoBehaviourPunCallbacks
             clone2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 0f);
             Destroy(clone2.gameObject, 0.5f);
             Destroy(col.gameObject);
+            PhotonNetwork.Instantiate(cheesePrefab.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
         }
     }
 

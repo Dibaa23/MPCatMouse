@@ -29,11 +29,14 @@ public class Spawner : MonoBehaviourPunCallbacks
         currPlayer.GetComponentInChildren<Camera>().enabled = true;
         PhotonNetwork.Instantiate(currPlayer.name, new Vector2(Random.Range(-50f, 50f), Random.Range(-33f, 33f)), Quaternion.identity);
 
-        spawnCats();
-        spawnBots();
-        spawnForestObstacles();
-        spawnCoins();
-        spawnCheese();
+        if (photonView.IsMine) {
+            spawnCats();
+            spawnBots();
+            spawnForestObstacles();
+            spawnCoins();
+            spawnCheese();
+        }
+        
     }
 
     // Update is called once per frame

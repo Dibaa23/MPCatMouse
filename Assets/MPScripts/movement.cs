@@ -32,7 +32,7 @@ public class movement : MonoBehaviourPunCallbacks
         speed = NormalSpeed;
         view = GetComponent<PhotonView>();
         staminaBarimg = GameObject.Find("Canvas").transform.GetChild(7).gameObject.GetComponent<Image>();
-        cam.orthographicSize = 30f;
+        cam.orthographicSize = 15f;
     }
 
     // Update is called once per frame

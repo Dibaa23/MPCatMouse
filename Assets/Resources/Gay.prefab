@@ -9757,6 +9757,7 @@ MonoBehaviour:
   Manager: {fileID: 0}
   boom: {fileID: 2177500804469530452, guid: de854d7a8b162d941953bff5c29936c4, type: 3}
   End: {fileID: 0}
+  cheesePrefab: {fileID: 3085996842830239023, guid: febeea2106b0e214baee4f519ff5810d, type: 3}
   healthBarimg: {fileID: 0}
   isHurt: 0
   alive: 0
@@ -9848,7 +9849,7 @@ MonoBehaviour:
   - {x: -0.26300225, y: -0.40060633, z: 0}
   m_ShapePathHash: 644986991
   m_Mesh: {fileID: 0}
-  m_InstanceId: 150986
+  m_InstanceId: 65974
 --- !u!60 &4612293901489550092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15586,7 +15587,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 15
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -20692,7 +20693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9000244, y: 28.299988}
+  m_AnchoredPosition: {x: -1.9000244, y: 48}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &407142169595864442
