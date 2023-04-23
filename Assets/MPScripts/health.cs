@@ -26,7 +26,7 @@ public class health : MonoBehaviourPunCallbacks
         healthBarimg = GameObject.Find("Canvas").transform.GetChild(5).gameObject.GetComponent<Image>();
         alive = true;
         End.SetActive(false);
-        HP = 1f;
+        HP = 2f;
         isHurt = false;
         view = GetComponent<PhotonView>();
         if (!view.IsMine) {
@@ -76,7 +76,7 @@ public class health : MonoBehaviourPunCallbacks
 
         if (col.gameObject.tag == "Cat")
         {
-            HP -= 0.25f;
+            HP -= 0.2f;
             StartCoroutine(cam.GetComponent<cameraShake>().Shaking());
         }
 

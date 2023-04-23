@@ -29,26 +29,20 @@ public class CatHealth : MonoBehaviourPunCallbacks
             Destroy(gameObject);   
         }
         Debug.Log(HP);
-        //HealthFill();
+        HealthFill();
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Cat")
+        if (col.gameObject.tag == "Bot")
         {
             HP -= 0.025f;
         }
 
-        if (col.gameObject.tag == "Bot")
+        if (col.gameObject.tag == "Mouse")
         {
             HP -= 0.05f;
         }
-
-        if (col.gameObject.tag == "Mouse")
-        {
-            HP -= 0.1f;
-        }
-
     }
 
     public void HealthFill()

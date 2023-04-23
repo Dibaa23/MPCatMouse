@@ -27,8 +27,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65824875412208464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 74.5}
+  m_LocalScale: {x: 0.027777778, y: 0.027777778, z: 0.027777778}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4520500529253709919}
@@ -38,8 +38,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7532996354389945535
 Canvas:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ Canvas:
   m_GameObject: {fileID: 65824875412208464}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 3371118435616900132}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4516052606516769493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -0.26300225, y: -0.40060633, z: 0}
   m_ShapePathHash: 644986991
   m_Mesh: {fileID: 0}
-  m_InstanceId: 65434
+  m_InstanceId: 95852
 --- !u!60 &4612293901489550092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5374,6 +5374,7 @@ GameObject:
   - component: {fileID: 5840991758439195403}
   - component: {fileID: 8032275794502459127}
   - component: {fileID: 5540943035891532271}
+  - component: {fileID: 6409005689736119955}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -5398,7 +5399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9000244, y: 50.7}
+  m_AnchoredPosition: {x: -1.9000244, y: -72.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5840991758439195403
@@ -5511,6 +5512,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: {fileID: 8032275794502459127}
+--- !u!114 &6409005689736119955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780206323887780349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40cd72d069f7884db421134e8c55f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2959236352324725027
 GameObject:
   m_ObjectHideFlags: 0
