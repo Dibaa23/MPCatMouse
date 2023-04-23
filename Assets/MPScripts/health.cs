@@ -26,7 +26,7 @@ public class health : MonoBehaviourPunCallbacks
         healthBarimg = GameObject.Find("Canvas").transform.GetChild(5).gameObject.GetComponent<Image>();
         alive = true;
         End.SetActive(false);
-        HP = 2f;
+        HP = 10f;
         isHurt = false;
         view = GetComponent<PhotonView>();
         if (!view.IsMine) {
@@ -38,6 +38,7 @@ public class health : MonoBehaviourPunCallbacks
     void Update()
     {
         if (view.IsMine) {
+            GameObject cat = GameObject.FindGameObjectWithTag("Cat");
             healthBarimg = GameObject.Find("Canvas").transform.GetChild(5).gameObject.GetComponent<Image>();
             if (HP <= 0f)
             {
@@ -47,7 +48,7 @@ public class health : MonoBehaviourPunCallbacks
                 alive = false;
             }
 
-            if (!alive)
+            if (!alive || cat == null)
             {
                 End.SetActive(true);
             }
@@ -61,6 +62,7 @@ public class health : MonoBehaviourPunCallbacks
             {
                 healthBarimg.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.75f);
             }
+
             HealthFill();
         }
         
