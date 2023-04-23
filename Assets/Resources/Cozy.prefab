@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7084d1452c7adf841b90f23d24a7282c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catPos: {x: 0, y: 0, z: 0}
+  offset: 180
   boom: {fileID: 2177500804469530452, guid: de854d7a8b162d941953bff5c29936c4, type: 3}
   rb2D: {fileID: 5857109584279338499}
   countdownDisplay: {fileID: 0}
@@ -701,7 +701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2607085969172177311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.48, y: -0.14, z: 0}
+  m_LocalPosition: {x: 3.33, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -26,7 +26,7 @@ public class movement : MonoBehaviourPunCallbacks
     void Start()
     {
         countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
-        //Cursor.visible = false; 
+        Cursor.visible = false; 
         ready = false;
         Manager = GameObject.Find("Spawner");
         speed = NormalSpeed;

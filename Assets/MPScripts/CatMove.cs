@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class CatMove : MonoBehaviourPunCallbacks
 {
-    public Vector3 catPos;
+    public float offset;
     public GameObject boom;
     public Rigidbody2D rb2D;
     public TMP_Text countdownDisplay;
@@ -19,7 +19,7 @@ public class CatMove : MonoBehaviourPunCallbacks
     void Start()
     {
         countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
-        //Cursor.visible = false;
+        Cursor.visible = false;
         ready = false;
         view = GetComponent<PhotonView>();
         cam.orthographicSize = 15f;
@@ -46,7 +46,7 @@ public class CatMove : MonoBehaviourPunCallbacks
         Vector2 positionOnScreen = cam.WorldToViewportPoint(transform.position);
         Vector2 mouseOnScreen = (Vector2) cam.ScreenToViewportPoint(Input.mousePosition);
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 180f));
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + offset));
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
