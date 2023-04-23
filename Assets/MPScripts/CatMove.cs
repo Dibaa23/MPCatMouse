@@ -6,6 +6,7 @@ using Photon.Pun;
 
 public class CatMove : MonoBehaviourPunCallbacks
 {
+    public Vector3 catPos;
     public GameObject boom;
     public Rigidbody2D rb2D;
     public TMP_Text countdownDisplay;
@@ -18,10 +19,11 @@ public class CatMove : MonoBehaviourPunCallbacks
     void Start()
     {
         countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
+        Cursor.visible = false;
         ready = false;
         view = GetComponent<PhotonView>();
         cam.orthographicSize = 15f;
-        speed = 50;
+        speed = 200;
     }
 
     // Update is called once per frame
@@ -38,14 +40,14 @@ public class CatMove : MonoBehaviourPunCallbacks
 
     public void rotation()
     {
-        Vector3 catPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        catPos = cam.ScreenToWorldPoint(Input.mousePosition);
         transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 5), catPos - transform.position);
     }
 
 
     public void thrust()
     {
-        rb2D.AddForce(transform.up * speed * Time.deltaTime, ForceMode2D.Impulse);
+        rb2D.AddForce(transform.right * speed * Time.deltaTime, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D col)

@@ -412,6 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  alive: 0
+  End: {fileID: 0}
   boom: {fileID: 2177500804469530452, guid: de854d7a8b162d941953bff5c29936c4, type: 3}
   healthBarimg: {fileID: 4728888916414247540}
 --- !u!1 &1034312420381417121

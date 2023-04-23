@@ -51,10 +51,7 @@ public class ButtonUI : MonoBehaviourPunCallbacks
 
     public void Pause()
     {
-        if (manager.GetComponent<Spawner>().currPlayer.GetComponent<health>().alive)
-        {
-            options.SetActive(true);
-        }
+        options.SetActive(true);
     }
 
     public void Resume() {

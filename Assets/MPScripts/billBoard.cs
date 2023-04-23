@@ -13,6 +13,6 @@ public class billBoard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
+        transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 0), transform.position);
     }
 }
