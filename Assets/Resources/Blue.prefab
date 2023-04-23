@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -0.26300225, y: -0.40060633, z: 0}
   m_ShapePathHash: 644986991
   m_Mesh: {fileID: 0}
-  m_InstanceId: 95852
+  m_InstanceId: 115720
 --- !u!60 &4612293901489550092
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5375,6 +5375,8 @@ GameObject:
   - component: {fileID: 8032275794502459127}
   - component: {fileID: 5540943035891532271}
   - component: {fileID: 6409005689736119955}
+  - component: {fileID: 8142262134793171278}
+  - component: {fileID: 5890556244205865049}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -5524,6 +5526,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40cd72d069f7884db421134e8c55f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8142262134793171278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780206323887780349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5890556244205865049}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &5890556244205865049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780206323887780349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &2959236352324725027
 GameObject:
   m_ObjectHideFlags: 0
