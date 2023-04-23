@@ -7507,14 +7507,15 @@ MonoBehaviour:
   catPrefab: {fileID: 662973162279683069, guid: 0b06b1c5f651f6349832a7200081b2ab, type: 3}
   coinPrefab: {fileID: 6052208450303652035, guid: 6d9b21c8ebbafd2428b4515f78c9912d, type: 3}
   playerPrefabs:
-  - {fileID: 771489069433686855, guid: b8e193bfb1f187b4bad9100106e89004, type: 3}
-  - {fileID: 771489069433686855, guid: 3903fc5ccf717be40bd290c45a912a33, type: 3}
   - {fileID: 771489069433686855, guid: dabf04d5a18d65c4d87ee817e2540df5, type: 3}
   - {fileID: 771489069433686855, guid: 2f70ef3813242bb4992ccf64bdbccdab, type: 3}
   - {fileID: 771489069433686855, guid: dda77ed5e81cef5458b978e3115cc50b, type: 3}
   - {fileID: 771489069433686855, guid: 3673515c1fc443a41957d89e52f5f0e5, type: 3}
   - {fileID: 771489069433686855, guid: 3c1706cbc81a29f4eaaaef5c93a817a9, type: 3}
   - {fileID: 662973162279683069, guid: 67ae0db2009feb145bf0363db5484cf9, type: 3}
+  - {fileID: 662973162279683069, guid: 093cada239ad8ed4fac7f7704a604848, type: 3}
+  - {fileID: 662973162279683069, guid: aec5ea784b8359844b1fc5c87ccc3b52, type: 3}
+  - {fileID: 662973162279683069, guid: afa0a500da9a057478029f461fdbbbca, type: 3}
   forestPrefabs:
   - {fileID: 6761506487498852043, guid: a11677f30202bf7488f370fcc07dc4e1, type: 3}
   - {fileID: 6761506487498852043, guid: b5a2dba2946c5c34ea339abde7b424df, type: 3}
