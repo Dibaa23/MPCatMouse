@@ -4,8 +4,9 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
 
-public class CatHealth : MonoBehaviourPunCallbacks
+public class CathyHealth : MonoBehaviourPunCallbacks
 {
+    public Camera cam;
     public float HP;
     public bool alive;
     public GameObject End;
@@ -21,20 +22,27 @@ public class CatHealth : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
         End = GameObject.Find("Canvas").transform.GetChild(1).gameObject;
         End.SetActive(false);
+        if (!view.IsMine)
+        {
+            cam.enabled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HP <= 0f)
-        {
-            GameObject clone2 = Instantiate(boom, transform.position, Quaternion.identity);
-            Destroy(clone2.gameObject, 0.5f);
-            clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
-            clone2.transform.localScale = new Vector3(9f, 9f, 9f);
-            Destroy(gameObject);   
+        if (view.IsMine) {
+            if (HP <= 0f)
+            {
+                GameObject clone2 = Instantiate(boom, transform.position, Quaternion.identity);
+                Destroy(clone2.gameObject, 0.5f);
+                clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
+                clone2.transform.localScale = new Vector3(9f, 9f, 9f);
+                Destroy(gameObject);
+            }
+            HealthFill();
         }
-        HealthFill();
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)

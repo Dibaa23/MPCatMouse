@@ -7514,6 +7514,7 @@ MonoBehaviour:
   - {fileID: 771489069433686855, guid: dda77ed5e81cef5458b978e3115cc50b, type: 3}
   - {fileID: 771489069433686855, guid: 3673515c1fc443a41957d89e52f5f0e5, type: 3}
   - {fileID: 771489069433686855, guid: 3c1706cbc81a29f4eaaaef5c93a817a9, type: 3}
+  - {fileID: 662973162279683069, guid: 67ae0db2009feb145bf0363db5484cf9, type: 3}
   forestPrefabs:
   - {fileID: 6761506487498852043, guid: a11677f30202bf7488f370fcc07dc4e1, type: 3}
   - {fileID: 6761506487498852043, guid: b5a2dba2946c5c34ea339abde7b424df, type: 3}

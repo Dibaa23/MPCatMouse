@@ -169,7 +169,7 @@ public class MiceAI : MonoBehaviourPunCallbacks
 
     public void Feed() {
         Cheese = GameObject.FindGameObjectWithTag("Cheese");
-        if (Vector2.Distance(Cheese.transform.position, transform.position) <= (Random.Range(15f, 30f)) && !runAway)
+        if (Vector2.Distance(Cheese.transform.position, transform.position) <= (Random.Range(25f, 50f)) && !runAway)
         {
             runTo = true;
             transform.position = Vector2.MoveTowards(transform.position, Cheese.transform.position, Time.deltaTime * ((Random.Range(0.50f, 1f)) * speed));
