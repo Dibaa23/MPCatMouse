@@ -85,7 +85,7 @@ public class ButtonUI : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("Title");
     }
 
-    public void OnMasterClientSwitched(Player newMasterClient) {
-        DisconnectPlayer();
+    public void OnMasterClientSwitched() {
+        Debug.Log("Host Switched");
     }
 }
