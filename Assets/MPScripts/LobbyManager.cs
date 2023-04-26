@@ -15,6 +15,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public TMP_InputField obsInput;
     public TMP_InputField cheeseInput;
     public TMP_InputField coinInput;
+    public TMP_InputField maxInput;
 
     public TMP_Text roomName;
     public GameObject lobby;
@@ -32,12 +33,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public GameObject playButton;
     public GameObject customize;
+    public float maxPlayers;
 
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.JoinLobby();
         createInput.characterLimit = 20;
+        catInput.characterLimit = 2;
+        obsInput.characterLimit = 2;
+        cheeseInput.characterLimit = 2;
+        coinInput.characterLimit = 2;
+        maxInput.characterLimit = 2;
+        maxPlayers = 5;
     }
 
     public void Update()
@@ -53,10 +61,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void OnClickCreate() {
+    public void OnClickCreate()
+    {
         if (createInput.text.Length >= 1)
         {
-            PhotonNetwork.CreateRoom(createInput.text, new RoomOptions() { MaxPlayers = 10, BroadcastPropsChangeToAll = true});
+            PhotonNetwork.CreateRoom(createInput.text, new RoomOptions() { MaxPlayers = (byte)maxPlayers, BroadcastPropsChangeToAll = true });
         }
     }
 
@@ -72,15 +81,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         UpdatePlayerList();
     }
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList) {
-        if (Time.time >= updateTime) {
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        if (Time.time >= updateTime)
+        {
             UpdateRoomList(roomList);
             updateTime = Time.time + timeBetween;
         }
     }
 
-    void UpdateRoomList(List<RoomInfo> list) {
-        foreach (RoomItem item in roomItemsList) {
+    void UpdateRoomList(List<RoomInfo> list)
+    {
+        foreach (RoomItem item in roomItemsList)
+        {
             Destroy(item.gameObject);
         }
         roomItemsList.Clear();
@@ -93,15 +106,18 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void JoinRoom(string roomName) {
+    public void JoinRoom(string roomName)
+    {
         PhotonNetwork.JoinRoom(roomName);
     }
 
-    public void OnClickLeaveRoom() {
+    public void OnClickLeaveRoom()
+    {
         PhotonNetwork.LeaveRoom();
     }
 
-    public override void OnLeftRoom() {
+    public override void OnLeftRoom()
+    {
         room.SetActive(false);
         lobby.SetActive(true);
     }
@@ -111,28 +127,34 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
-    void UpdatePlayerList() {
-        foreach (PlayerItem item in playerItemsList) {
+    void UpdatePlayerList()
+    {
+        foreach (PlayerItem item in playerItemsList)
+        {
             Destroy(item.gameObject);
         }
         playerItemsList.Clear();
 
-        if (PhotonNetwork.CurrentRoom == null) {
+        if (PhotonNetwork.CurrentRoom == null)
+        {
             return;
         }
 
-        foreach (KeyValuePair<int, Player> player in PhotonNetwork.CurrentRoom.Players) {
+        foreach (KeyValuePair<int, Player> player in PhotonNetwork.CurrentRoom.Players)
+        {
             PlayerItem newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
             newPlayerItem.SetPlayerInfo(player.Value);
             PhotonNetwork.SetPlayerCustomProperties(newPlayerItem.playerProperties);
-            if (player.Value == PhotonNetwork.LocalPlayer) {
+            if (player.Value == PhotonNetwork.LocalPlayer)
+            {
                 newPlayerItem.ApplyLocalChanges();
             }
             playerItemsList.Add(newPlayerItem);
         }
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer) {
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
         UpdatePlayerList();
     }
 
@@ -141,8 +163,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         UpdatePlayerList();
     }
 
-    public void OnClickPlayButton() {
-        if (PhotonNetwork.IsMasterClient) {
+    public void OnClickPlayButton()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.LoadLevel("Multiplayer");
         }
@@ -155,6 +179,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         Spawner.forestObstacles = float.Parse(obsInput.text);
         Spawner.numCheese = float.Parse(cheeseInput.text);
         Spawner.numCoins = float.Parse(coinInput.text);
+        maxPlayers = float.Parse(maxInput.text);
         customize.SetActive(false);
     }
 }
