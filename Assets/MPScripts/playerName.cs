@@ -12,12 +12,20 @@ public class playerName : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        SetName();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Name.text = PhotonNetwork.NickName;
+         
     }
+         
+    public void SetName() {
+        Name.text = photonView.Owner.NickName;
+    }
+
+
+
 }
