@@ -38,9 +38,10 @@ public class Shooting : MonoBehaviourPunCallbacks
     public IEnumerator CD()
     {
         ready = false;
-        GameObject clone = (GameObject)Instantiate(bullet, ball.position, ball.rotation);
+        GameObject clone = (GameObject) PhotonNetwork.Instantiate(bullet.name, ball.position, ball.rotation);
         yield return new WaitForSeconds(1f);
         ready = true;
-        Destroy(clone, 3f);
+        yield return new WaitForSeconds(3f);
+        PhotonNetwork.Destroy(clone);
     }
 }
