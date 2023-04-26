@@ -16,6 +16,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.Disconnect();
+        usernameInput.characterLimit = 15;
     }
 
     // Update is called once per frame

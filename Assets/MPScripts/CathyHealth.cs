@@ -38,8 +38,8 @@ public class CathyHealth : MonoBehaviourPunCallbacks
                 Destroy(clone2.gameObject, 0.5f);
                 clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
                 clone2.transform.localScale = new Vector3(9f, 9f, 9f);
+                alive = false;
                 End.SetActive(true);
-                PhotonNetwork.Destroy(gameObject);
             }
         }
         HealthFill();

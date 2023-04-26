@@ -46,12 +46,7 @@ public class health : MonoBehaviourPunCallbacks
                 Destroy(clone2.gameObject, 0.5f);
                 clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
                 alive = false;
-            }
-
-            if (!alive || cat == null)
-            {
                 End.SetActive(true);
-                PhotonNetwork.Destroy(gameObject);
             }
 
             if (HP <= 0.25f)

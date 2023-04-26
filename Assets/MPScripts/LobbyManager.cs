@@ -29,6 +29,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.JoinLobby();
+        createInput.characterLimit = 20;
     }
 
     public void Update()
