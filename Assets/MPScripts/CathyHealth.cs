@@ -32,6 +32,7 @@ public class CathyHealth : MonoBehaviourPunCallbacks
     void Update()
     {
         if (view.IsMine) {
+            GameObject mouse = GameObject.FindGameObjectWithTag("Mouse");
             if (HP <= 0f)
             {
                 GameObject clone2 = Instantiate(boom, transform.position, Quaternion.identity);
@@ -48,14 +49,14 @@ public class CathyHealth : MonoBehaviourPunCallbacks
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Bot")
+        if (col.gameObject.tag == "Bot" || col.gameObject.tag == "Mouse")
         {
             HP -= 0.05f;
         }
 
-        if (col.gameObject.tag == "Mouse")
+        if (col.gameObject.tag == "Cat")
         {
-            HP -= 0.05f;
+            HP -= 0.10f;
         }
 
         if (col.gameObject.tag == "Bullet")

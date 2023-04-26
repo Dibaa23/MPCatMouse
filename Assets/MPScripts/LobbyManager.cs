@@ -16,7 +16,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     List<RoomItem> roomItemsList = new List<RoomItem>();
 
     public Transform contentObject;
-    public float timeBetween = 1.5f;
+    public float timeBetween = 1f;
     float updateTime;
 
     public List<PlayerItem> playerItemsList = new List<PlayerItem>();
@@ -38,6 +38,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             playButton.SetActive(true);
         }
+
         else
         {
             playButton.SetActive(false);
@@ -71,6 +72,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             Destroy(item.gameObject);
         }
         roomItemsList.Clear();
+
         foreach (RoomInfo room in list)
         {
             RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
