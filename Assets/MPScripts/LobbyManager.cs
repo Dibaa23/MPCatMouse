@@ -9,6 +9,13 @@ using Photon.Realtime;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public TMP_InputField createInput;
+
+    public TMP_InputField miceInput;
+    public TMP_InputField catInput;
+    public TMP_InputField obsInput;
+    public TMP_InputField cheeseInput;
+    public TMP_InputField coinInput;
+
     public TMP_Text roomName;
     public GameObject lobby;
     public GameObject room;
@@ -24,6 +31,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public Transform playerItemParent;
 
     public GameObject playButton;
+    public GameObject customize;
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +42,20 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void Update()
     {
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >= 2)
+        if (PhotonNetwork.IsMasterClient)
         {
-            playButton.SetActive(true);
+            if (PhotonNetwork.CurrentRoom.PlayerCount >= 2) 
+            {
+                playButton.SetActive(true);
+            }
+            
+            customize.SetActive(true);
         }
 
         else
         {
             playButton.SetActive(false);
+            customize.SetActive(false);
         }
     }
 
@@ -134,5 +148,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.LoadLevel("Multiplayer");
         }
+    }
+
+    public void OnClickDone()
+    {
+        Spawner.numBots = float.Parse(miceInput.text);
+        Spawner.numCats = float.Parse(catInput.text);
+        Spawner.forestObstacles = float.Parse(obsInput.text);
+        Spawner.numCheese = float.Parse(cheeseInput.text);
+        Spawner.numCoins = float.Parse(coinInput.text);
     }
 }

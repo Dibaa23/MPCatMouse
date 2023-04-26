@@ -13,11 +13,11 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject[] playerPrefabs;
     public GameObject[] forestPrefabs;
     public List<GameObject> catPrefabs;
-    public float numBots;
-    public float numCats;
-    public float forestObstacles;
-    public float numCheese;
-    public float numCoins;
+    public static float numBots;
+    public static float numCats;
+    public static float forestObstacles;
+    public static float numCheese;
+    public static float numCoins;
     PhotonView view;
 
     // Start is called before the first frame update
