@@ -17,12 +17,25 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     public ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
     public Image playerAvatar;
     public Sprite[] avatars;
+    public bool change;
 
     Player player;
 
 
     private void Start() {
         backgroundImage = GetComponent<Image>();
+    }
+
+    void Update() {
+        if (Input.GetKeyDown("left"))
+        {
+            OnClickLeftArrow();
+        }
+
+        if (Input.GetKeyDown("right"))
+        {
+            OnClickRightArrow();
+        }
     }
 
 
@@ -34,8 +47,6 @@ public class PlayerItem : MonoBehaviourPunCallbacks
 
     public void ApplyLocalChanges() {
         backgroundImage.color = highlightColor;
-        leftArrowButton.SetActive(true);
-        rightArrowButton.SetActive(true);
     }
 
     public void OnClickLeftArrow() {
