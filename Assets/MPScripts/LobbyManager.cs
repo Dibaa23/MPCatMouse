@@ -130,7 +130,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public void OnClickPlayButton() {
         if (PhotonNetwork.IsMasterClient) {
             PhotonNetwork.LoadLevel("Multiplayer");
-            roomItemsList.Clear();
         }
     }
 }
