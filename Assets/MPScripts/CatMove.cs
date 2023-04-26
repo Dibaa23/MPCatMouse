@@ -19,7 +19,7 @@ public class CatMove : MonoBehaviourPunCallbacks
     void Start()
     {
         countdownDisplay = GameObject.Find("CountDown").GetComponent<TMPro.TextMeshProUGUI>();
-        Cursor.visible = false;
+        //Cursor.visible = false;
         ready = false;
         view = GetComponent<PhotonView>();
         cam.orthographicSize = 15f;
