@@ -61,7 +61,7 @@ public class CathyHealth : MonoBehaviourPunCallbacks
 
         if (col.gameObject.tag == "Bullet")
         {
-            HP -= 0.025f;
+            HP -= 0.05f;
         }
     }
 

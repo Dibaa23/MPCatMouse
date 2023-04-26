@@ -68,7 +68,7 @@ public class health : MonoBehaviourPunCallbacks
     {
         if (col.gameObject.tag == "Bullet")
         {
-            HP -= 0.05f;
+            HP -= 0.10f;
             StartCoroutine(cam.GetComponent<cameraShake>().Shaking());
         }
 
@@ -97,7 +97,7 @@ public class health : MonoBehaviourPunCallbacks
 
             if (HP <= 1f)
             {
-                HP += 0.15f;
+                HP += 0.25f;
             }
 
             if (gameObject.GetComponent<movement>().stamina <= 10f)

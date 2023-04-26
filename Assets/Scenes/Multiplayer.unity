@@ -6901,7 +6901,7 @@ MonoBehaviour:
   numBots: 30
   numCats: 2
   forestObstacles: 20
-  numCheese: 10
+  numCheese: 20
   numCoins: 30
 --- !u!4 &5980061612943198362
 Transform:
