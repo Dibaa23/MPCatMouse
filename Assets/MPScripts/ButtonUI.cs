@@ -54,6 +54,11 @@ public class ButtonUI : MonoBehaviourPunCallbacks
         options.SetActive(true);
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     public void Resume() {
         options.SetActive(false);
     }
