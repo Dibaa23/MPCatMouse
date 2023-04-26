@@ -42,20 +42,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void Update()
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >= 1)
         {
-            if (PhotonNetwork.CurrentRoom.PlayerCount >= 2) 
-            {
-                playButton.SetActive(true);
-            }
-            
-            customize.SetActive(true);
+            playButton.SetActive(true);
         }
 
         else
         {
             playButton.SetActive(false);
-            customize.SetActive(false);
         }
     }
 
@@ -69,6 +63,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         lobby.SetActive(false);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            customize.SetActive(true);
+        }
         room.SetActive(true);
         roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
         UpdatePlayerList();
@@ -157,5 +155,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         Spawner.forestObstacles = float.Parse(obsInput.text);
         Spawner.numCheese = float.Parse(cheeseInput.text);
         Spawner.numCoins = float.Parse(coinInput.text);
+        customize.SetActive(false);
     }
 }
