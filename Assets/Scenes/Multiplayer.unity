@@ -7534,10 +7534,10 @@ MonoBehaviour:
   - {fileID: 6761506487498852043, guid: 416bd00e8d8b92f489792674ec1877a8, type: 3}
   - {fileID: 6761506487498852043, guid: 02b84c3fe93baef4bb2ba5661bf06654, type: 3}
   catPrefabs: []
-  numBots: 20
+  numBots: 30
   numCats: 2
   forestObstacles: 20
-  numCheese: 5
+  numCheese: 10
   numCoins: 30
 --- !u!4 &5980061612943198362
 Transform:

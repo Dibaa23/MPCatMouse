@@ -39,7 +39,7 @@ public class Shooting : MonoBehaviourPunCallbacks
     {
         ready = false;
         GameObject clone = (GameObject)Instantiate(bullet, ball.position, ball.rotation);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1f);
         ready = true;
         Destroy(clone, 3f);
     }
