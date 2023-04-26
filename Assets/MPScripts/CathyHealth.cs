@@ -39,6 +39,7 @@ public class CathyHealth : MonoBehaviourPunCallbacks
                 clone2.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
                 clone2.transform.localScale = new Vector3(9f, 9f, 9f);
                 End.SetActive(true);
+                PhotonNetwork.Destroy(gameObject);
             }
         }
         HealthFill();

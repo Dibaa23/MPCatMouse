@@ -51,6 +51,7 @@ public class health : MonoBehaviourPunCallbacks
             if (!alive || cat == null)
             {
                 End.SetActive(true);
+                PhotonNetwork.Destroy(gameObject);
             }
 
             if (HP <= 0.25f)
