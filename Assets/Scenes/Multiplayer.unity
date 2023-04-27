@@ -1232,7 +1232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199.60156, y: -401.27}
+  m_AnchoredPosition: {x: 199.60156, y: -401.26953}
   m_SizeDelta: {x: 214.91351, y: 58.650513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &732077071
@@ -6898,11 +6898,6 @@ MonoBehaviour:
   - {fileID: 6761506487498852043, guid: 416bd00e8d8b92f489792674ec1877a8, type: 3}
   - {fileID: 6761506487498852043, guid: 02b84c3fe93baef4bb2ba5661bf06654, type: 3}
   catPrefabs: []
-  numBots: 30
-  numCats: 2
-  forestObstacles: 20
-  numCheese: 20
-  numCoins: 30
 --- !u!4 &5980061612943198362
 Transform:
   m_ObjectHideFlags: 0
